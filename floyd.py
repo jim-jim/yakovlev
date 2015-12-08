@@ -41,7 +41,6 @@ if __name__ == "__main__":
     eps = ldexp(1,-1074)
     inf = mxm * 2
     nan = inf - inf
-    t_end = time.process_time()
     for i in range(length):
         for j in range(length):
             res = 0
@@ -62,5 +61,6 @@ if __name__ == "__main__":
         for i in range(length):
             outfile.write(",".join("%.7f" % j for j in D[i]))
             outfile.write(",\n")
+    t_end = time.process_time()
     t_time = t_end - t_start
     print((int)(t_time * 1000))
